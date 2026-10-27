@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.625rem;
+  --background: #fffaf7;
+  --foreground: #2a2726;
+  --card: #ffffff;
+  --card-foreground: #2a2726;
+  --popover: #ffffff;
+  --popover-foreground: #2a2726;
+  --primary: #ef4b25;
+  --primary-foreground: #ffffff;
+  --secondary: #f8eeea;
+  --secondary-foreground: #3a302d;
+  --muted: #f7f0ec;
+  --muted-foreground: #756d69;
+  --accent: #fff0e9;
+  --accent-foreground: #b9361d;
+  --destructive: #c93636;
+  --border: #eee5df;
+  --input: #e8ddd6;
+  --ring: #ef4b25;
+}
+
+@theme inline {
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-display: "Times New Roman", Georgia, serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@utility hero-wash {
+  background:
+    radial-gradient(circle at 78% 36%, #efb9a9 0, transparent 44%),
+    radial-gradient(circle at 12% 100%, #f0d9d9 0, transparent 41%),
+    linear-gradient(110deg, #fbf5f2 0%, #f7e8e8 48%, #f9ddcf 100%);
+}
+
+@utility hero-primary-button {
+  background: linear-gradient(90deg, #b82e0d, #ff5128);
+  box-shadow: 0 6px 12px #a62d1826;
+}
+
+@utility creator-gradient {
+  background: linear-gradient(112deg, #9f2714 0%, #e84319 51%, #ff684d 100%);
+}
